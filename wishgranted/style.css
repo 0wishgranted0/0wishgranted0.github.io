@@ -193,16 +193,32 @@ animation: rr 2.5s;}
 @media (max-width: 768px) {
     .team-grid { grid-template-columns: repeat(2, 1fr); }
     .hero-content h2 { font-size: 2.5rem; }
-     .main-nav {
-        font-size: 1rem;
-        margin-top: 10px;
+.nav-container {
+        flex-direction: column; /* 讓 Logo 放在選單上方 */
+        gap: 15px;             /* Logo 與選單之間的距離 */
     }
- .main-nav li {
-        margin: 0px 20px;
+
+    .main-nav {
+        display: flex;
+        justify-content: center; /* 選單項目水平置中 */
+        padding: 0;
+        width: 100%;             /* 確保佔滿寬度 */
     }
-     .wrapper {
-        flex-direction: column;
-        align-items: center;
+
+    .main-nav li {
+        /* 移除原本設定的 margin-left，改用左右平均的間距 */
+        margin: 0 8px; 
+    }
+
+    .main-nav li a {
+        /* ★★★ 關鍵：強制文字不換行 ★★★ */
+        white-space: nowrap; 
+        
+        /* 縮小字體大小以符合寬度 */
+        font-size: 1rem; 
+        
+        /* 如果你有幫 VR 連結做邊框，這裡可以縮小內間距 */
+        padding: 4px 8px; 
     }
     
 }
