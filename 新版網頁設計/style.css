@@ -1,0 +1,214 @@
+/* 基本設定 */
+html {
+    scroll-behavior: smooth; /* 平滑滾動 */
+}
+
+body {
+    background-color: #000; /* 黑色背景 */
+    color: #eee; /* 淺灰色文字提高閱讀性 */
+    font-family: 'Philosopher', "Microsoft JhengHei", sans-serif;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.wrapper {
+    max-width: 1250px; /* 學校規範的內容寬度 */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 導覽列 */
+.page-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    padding: 0px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo { width: 165px; }
+
+.main-nav {
+    display: flex;
+    list-style: none;
+}
+
+.main-nav li a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.main-nav li a:hover { color: #f1c40f; }
+
+/* 首屏 Hero Section */
+
+.hero-section {
+    height: 1000px; /* 學校要求的首屏高度 */
+    
+    
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* 半透明黑遮罩 */
+        url('images/hero-bg.jpg') center center; /* 你的圖片路徑與對齊方式 */
+    
+
+    background-size: cover; /* 讓圖片填滿整個畫面 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff; /* 確保文字是白色的 */
+    animation: r 3s;
+}
+
+@keyframes r{
+    0%{ opacity: 0;}
+    100%{ opacity: 1;}
+}
+
+.hero-content h2 { font-size: 1.2rem; margin-bottom: 0px; color: #fff; 
+animation: rr 2.5s;}
+
+@keyframes rr{
+    0%{transform: translateY(-120px); opacity: 0;}
+    100%{transform: translateY(0px); opacity: 1;}
+}
+
+
+/* 區塊標題 */
+.section-padding { padding: 100px 0; }
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+.post-title { font-size: 2rem; border-bottom: 1px solid #444; display: inline-block; padding-bottom: 10px; }
+
+.post-title span { font-size: 1rem; color: #888; margin-left: 10px; text-transform: uppercase; }
+
+/* 作品介紹：影片與文字混排 */
+.intro-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.video-wrapper {
+    flex: 1;
+    min-width: 300px;
+    aspect-ratio: 16/9;
+}
+
+.video-wrapper iframe { width: 100%; height: 100%; border-radius: 8px; }
+
+.intro-text { flex: 0.8; min-width: 300px; }
+
+.story-box {
+    background: #111;
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 30px;
+    border-left: 4px solid #f1c40f;
+}
+
+/* 角色卡片網格 */
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.character-card {
+    background: #111;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.character-card:hover { transform: translateY(-10px); background: #222; }
+
+/* 1. 角色圖片的容器 */
+.char-img {
+    background-color: #fff;      /* 多出的部分填充白色 */
+    height: 250px;               /* 這裡設定你想要的統一高度 */
+    display: flex;               /* 使用 flex 讓圖片居中 */
+    align-items: center;         /* 垂直居中 */
+    justify-content: center;     /* 水平居中 */
+    overflow: hidden;            /* 確保圖片不超出範圍 */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+/* 2. 圖片本身的設定 */
+.char-img img {
+    width: 100%;                 /* 寬度嘗試填滿 */
+    height: 100%;                /* 高度嘗試填滿 */
+    
+    /* 關鍵屬性：contain 會讓圖片完整顯示，並自動在縮放後留下空白 */
+    object-fit: contain;         
+    
+    /* 如果圖片本身有透明背景，這行可以確保圖片背後也是白的 */
+    background-color: #fff;      
+}
+
+.char-info { padding: 20px; }
+
+/* 製作團隊網格 */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.team-member { text-align: center; }
+
+.member-photo {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #f1c40f;
+}
+
+.member-photo img { width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: top; 
+    
+    display: block;}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-content h2 { font-size: 2.5rem; }
+     .main-nav {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+ .main-nav li {
+        margin: 0px 20px;
+    }
+     .wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}
+
+footer {
+    text-align: center;
+    padding: 50px 0;
+    border-top: 1px solid #222;
+}
