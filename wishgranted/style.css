@@ -219,8 +219,13 @@ animation: rr 2.5s;}
         max-width: 380px;     
         margin: 0 auto;     
     
+    }
+    
+    .intro-text { flex: 0.8; 
+    min-width: 320px;
+    margin: 0 auto; 
+    }
 }
-
 
 footer {
     text-align: center;
