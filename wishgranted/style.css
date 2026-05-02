@@ -191,37 +191,54 @@ animation: rr 2.5s;}
 
 /* 響應式調整 */
 @media (max-width: 768px) {
-    .team-grid { grid-template-columns: repeat(2, 1fr); }
-    .hero-content h2 { font-size: 2.5rem; }
-.nav-container {
-        flex-direction: column; /* 讓 Logo 放在選單上方 */
-        gap: 15px;             /* Logo 與選單之間的距離 */
+   /* 1. 強制讓容器內的 Logo 與 Nav 上下排列 */
+    /* 1. 確保外層容器垂直置中堆疊 */
+    .nav-container {
+        flex-direction: column;
+        align-items: center;    /* Logo 與選單水平置中 */
+        padding: 15px 0;
     }
 
+    /* 2. 修正選單偏移問題 */
     .main-nav {
         display: flex;
-        justify-content: center; /* 選單項目水平置中 */
-        padding: 0;
-        width: 100%;             /* 確保佔滿寬度 */
+        justify-content: center; /* 核心：讓項目在容器內水平置中 */
+        padding: 0;             /* 關鍵：清除瀏覽器預設的左側內距 */
+        margin: 10px 0 0 0;      /* 只給頂部一點空間，避開 Logo */
+        width: 100%;
+        list-style: none;
     }
 
+    /* 3. 平衡項目間距 */
     .main-nav li {
-        /* 移除原本設定的 margin-left，改用左右平均的間距 */
-        margin: 0 8px; 
+        /* 關鍵：左右間距必須相等，才會精確置中 */
+        margin: 0 5px ; 
     }
 
     .main-nav li a {
-        /* ★★★ 關鍵：強制文字不換行 ★★★ */
-        white-space: nowrap; 
-        
-        /* 縮小字體大小以符合寬度 */
-        font-size: 1rem; 
-        
-        /* 如果你有幫 VR 連結做邊框，這裡可以縮小內間距 */
-        padding: 4px 8px; 
+        font-size: 16px;
+        white-space: nowrap;
+        padding: 5px;
+        /* 關鍵：清除桌面版可能繼承的 margin-left */
+        margin-left: 0 ; 
     }
-    
+
+    /* 2. 首屏文字優化：解決字體過大問題 */
+    .hero-section {
+        height: 800px;         /* 手機版高度可以縮短，避免滑不到內容 */
+    }
+
+
+
+    .hero-content h2 {
+        font-size: 1rem;    /* "如果我們從未改變..." 縮小字體 */
+        padding: 0 15px;       /* 增加兩側內距，避免字碰到螢幕邊邊 */
+        line-height: 1.6;      /* 調整行距，讓兩行字之間不要太擠 */
+        max-width: 380px;      /* 限制寬度讓它自然斷句，視覺更美觀 */
+        margin: 0 auto;        /* 保持置中 */
+    }
 }
+
 
 footer {
     text-align: center;
