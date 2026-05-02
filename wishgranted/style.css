@@ -1,18 +1,18 @@
 /* 基本設定 */
 html {
-    scroll-behavior: smooth; /* 平滑滾動 */
+    scroll-behavior: smooth; 
 }
 
 body {
-    background-color: #000; /* 黑色背景 */
-    color: #eee; /* 淺灰色文字提高閱讀性 */
+    background-color: #000;
+    color: #eee; 
     font-family: 'Philosopher', "Microsoft JhengHei", sans-serif;
     line-height: 1.8;
     margin: 0;
 }
 
 .wrapper {
-    max-width: 1250px; /* 學校規範的內容寬度 */
+    max-width: 1250px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -53,20 +53,20 @@ body {
 /* 首屏 Hero Section */
 
 .hero-section {
-    height: 1000px; /* 學校要求的首屏高度 */
+    height: 1000px; 
     
     
     background: 
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* 半透明黑遮罩 */
-        url('images/hero-bg.jpg') center center; /* 你的圖片路徑與對齊方式 */
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+        url('images/hero-bg.jpg') center center; 
     
 
-    background-size: cover; /* 讓圖片填滿整個畫面 */
+    background-size: cover; 
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #fff; /* 確保文字是白色的 */
+    color: #fff; 
     animation: r 3s;
 }
 
@@ -97,7 +97,7 @@ animation: rr 2.5s;}
 
 .post-title span { font-size: 1rem; color: #888; margin-left: 10px; text-transform: uppercase; }
 
-/* 作品介紹：影片與文字混排 */
+/* 作品介紹 */
 .intro-container {
     display: flex;
     gap: 40px;
@@ -122,7 +122,7 @@ animation: rr 2.5s;}
     border-left: 4px solid #f1c40f;
 }
 
-/* 角色卡片網格 */
+/* 角色卡片 */
 .character-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -138,33 +138,29 @@ animation: rr 2.5s;}
 
 .character-card:hover { transform: translateY(-10px); background: #222; }
 
-/* 1. 角色圖片的容器 */
+
 .char-img {
-    background-color: #fff;      /* 多出的部分填充白色 */
-    height: 250px;               /* 這裡設定你想要的統一高度 */
-    display: flex;               /* 使用 flex 讓圖片居中 */
-    align-items: center;         /* 垂直居中 */
-    justify-content: center;     /* 水平居中 */
-    overflow: hidden;            /* 確保圖片不超出範圍 */
+    background-color: #fff;      
+    height: 250px;              
+    display: flex;              
+    align-items: center;        
+    justify-content: center;    
+    overflow: hidden;            
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
 
-/* 2. 圖片本身的設定 */
+
 .char-img img {
-    width: 100%;                 /* 寬度嘗試填滿 */
-    height: 100%;                /* 高度嘗試填滿 */
-    
-    /* 關鍵屬性：contain 會讓圖片完整顯示，並自動在縮放後留下空白 */
-    object-fit: contain;         
-    
-    /* 如果圖片本身有透明背景，這行可以確保圖片背後也是白的 */
+    width: 100%;                
+    height: 100%;
+    object-fit: contain;
     background-color: #fff;      
 }
 
 .char-info { padding: 20px; }
 
-/* 製作團隊網格 */
+/* 製作團隊 */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -191,27 +187,24 @@ animation: rr 2.5s;}
 
 /* 響應式調整 */
 @media (max-width: 768px) {
-   /* 1. 強制讓容器內的 Logo 與 Nav 上下排列 */
-    /* 1. 確保外層容器垂直置中堆疊 */
     .nav-container {
         flex-direction: column;
-        align-items: center;    /* Logo 與選單水平置中 */
+        align-items: center;   
         padding: 15px 0;
     }
 
-    /* 2. 修正選單偏移問題 */
+   
     .main-nav {
         display: flex;
-        justify-content: center; /* 核心：讓項目在容器內水平置中 */
-        padding: 0;             /* 關鍵：清除瀏覽器預設的左側內距 */
-        margin: 10px 0 0 0;      /* 只給頂部一點空間，避開 Logo */
+        justify-content: center; 
+        padding: 0;             
+        margin: 10px 0 0 0;     
         width: 100%;
         list-style: none;
     }
 
-    /* 3. 平衡項目間距 */
+    
     .main-nav li {
-        /* 關鍵：左右間距必須相等，才會精確置中 */
         margin: 0 5px ; 
     }
 
@@ -219,23 +212,22 @@ animation: rr 2.5s;}
         font-size: 16px;
         white-space: nowrap;
         padding: 5px;
-        /* 關鍵：清除桌面版可能繼承的 margin-left */
         margin-left: 0 ; 
     }
 
-    /* 2. 首屏文字優化：解決字體過大問題 */
+   
     .hero-section {
-        height: 800px;         /* 手機版高度可以縮短，避免滑不到內容 */
+        height: 800px;      
     }
 
 
 
     .hero-content h2 {
-        font-size: 1rem;    /* "如果我們從未改變..." 縮小字體 */
-        padding: 0 15px;       /* 增加兩側內距，避免字碰到螢幕邊邊 */
-        line-height: 1.6;      /* 調整行距，讓兩行字之間不要太擠 */
-        max-width: 380px;      /* 限制寬度讓它自然斷句，視覺更美觀 */
-        margin: 0 auto;        /* 保持置中 */
+        font-size: 1rem;   
+        padding: 0 15px;      
+        line-height: 1.6;      
+        max-width: 380px;      
+        margin: 0 auto;        
     }
 }
 
