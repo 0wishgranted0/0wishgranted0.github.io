@@ -191,7 +191,7 @@ animation: rr 2.5s;}
     .hero-content h2 { font-size: 2.5rem; }
     .nav-container {
         flex-direction: column; 
-        gap: 15px;             
+        gap: 10px;             
     }
 
     .main-nav {
@@ -202,16 +202,25 @@ animation: rr 2.5s;}
     }
 
     .main-nav li {
-        margin: 0 0px; 
+        margin: 0 8px; 
     }
 
     .main-nav li a {
         white-space: nowrap; 
         font-size: 1rem; 
-        padding: 4px 8px; 
+        padding: 2px 4px; 
+        margin-left: 0 !important;
     }
+
+    .hero-content h2 {
+        font-size: 1.5rem;    
+        padding: 0 15px;       
+        line-height: 1.6;      
+        max-width: 380px;     
+        margin: 0 auto;     
     
 }
+
 
 footer {
     text-align: center;
