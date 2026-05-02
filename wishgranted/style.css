@@ -191,7 +191,7 @@ animation: rr 2.5s;}
     .hero-content h2 { font-size: 2.5rem; }
     .nav-container {
         flex-direction: column; 
-        gap: 10px;             
+        gap: 0px;             
     }
 
     .main-nav {
